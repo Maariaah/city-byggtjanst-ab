@@ -1,0 +1,131 @@
+.home {
+  .main-slider {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+
+    ul {
+      display: flex;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .certificates {
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      li {
+        padding: 0;
+        max-width: 30%;
+        height: 300px;
+        margin-right: 10px;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+          position: absolute;
+          content: "";
+          background: $primary-color;
+          width: 700px;
+          height: 900px;
+          transition: all 0.4s ease-in-out;
+          transform: translate(-820px, -400px) rotate(42deg);
+        }
+
+        &:hover {
+          &:before {
+            transform: translate(-290px, -400px) rotate(40deg);
+          }
+
+          .inner-content {
+            opacity: 1;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .inner-content {
+          opacity: 0;
+          position: absolute;
+          text-align: center;
+          color: $color-light;
+          transition: .5s ease;
+          @include center;
+
+          img {
+            width: 30px;
+          }
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .introduction {
+    img {
+      width: 100%;
+      @media (min-width: 810px) {
+        max-width: 460px;
+      }
+    }
+
+    .title__small-screen {
+      display: none;
+
+      @media (max-width: 640px) {
+        display: block;
+      }
+    }
+
+    .title__large-screen {
+      display: block;
+
+      @media (max-width: 640px) {
+        display: none;
+      }
+    }
+  }
+
+  section {
+
+    &.certificates {
+      border-top: 1px solid $light-border;
+    }
+  }
+
+  .certificates {
+
+    ul {
+
+      li {
+
+        [class^="icon-"],
+        [class*=" icon-"] {
+          font-size: 36px;
+        }
+
+        @media (max-width: 640px) {
+          max-width: 100%;
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 640px) {
+        display: block;
+      }
+    }
+  }
+}

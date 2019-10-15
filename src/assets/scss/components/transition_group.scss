@@ -1,0 +1,19 @@
+.show {
+  display: block;
+  z-Index: 2;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.slide-enter {
+  opacity: 0;
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+

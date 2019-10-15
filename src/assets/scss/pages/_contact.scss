@@ -1,0 +1,151 @@
+.inline-contact-info {
+  margin: 0;
+  float: right;
+
+  .contact-map & {
+    float: none;
+    margin: 20px 0;
+
+    li {
+      @media (max-width: 430px) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  li {
+    padding: 10px 25px;
+    cursor: pointer;
+    display: inline-block;
+    border-right: 1px solid $light-border;
+
+    @media (max-width: 800px) {
+      padding: 10px 15px;
+    }
+
+    &:hover {
+      p {
+        transition: 0.2s ease-in;
+        color: $secondary-color;
+      }
+    }
+
+    p {
+      display: block;
+      text-align: left;
+      margin: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      border: none;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
+.column-half {
+
+  &__inner-wrapper {
+
+    .contact-form & {
+      padding: 30px;
+    }
+  }
+
+  &.contact-form {
+    background-color: white;
+    box-shadow: 7px 10px 39px -18px rgba(0, 0, 0, 0.28);
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid $light-border;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+      display: block;
+    }
+  }
+
+  @media (max-width: 840px) {
+    width: 100%;
+
+    &.contact-form {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.contact-information {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.contact-info-blocks {
+  margin: 0;
+
+  .conact-info__item {
+
+    .column-half__inner-wrapper {
+      background-color: $lightest-grey;
+      margin: 5px;
+      padding: 20px;
+
+      [class^="icon-"],
+      [class*=" icon-"] {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+
+        &::before {
+          font-size: 50px;
+        }
+
+        @media (max-width: 540px) {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .contact-information {
+
+        .contact-information__data,
+        p {
+          line-height: 28px;
+        }
+
+        p {
+          display: block;
+          margin: 0;
+        }
+
+        @media (max-width: 540px) {
+          text-align: center;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.contact-map {
+  iframe {
+    width: 100%;
+
+    @media (max-width: 800px) {
+      max-height: 300px;
+    }
+  }
+}
+

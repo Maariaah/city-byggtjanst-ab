@@ -1,0 +1,96 @@
+.renovations {
+  .cards {
+    margin: 0;
+
+    .card {
+      border: 1px solid $light-border;
+      padding: 20px;
+      background-color: #fff;
+      margin: 0 10px 10px 0;
+      height: 200px;
+      text-align: center;
+      width: 27%;
+      float: left;
+      transition: 0.5s ease;
+
+      &:hover {
+        transform: translate(1px, 1px);
+        webkit-box-shadow: 7px 10px 39px -18px rgba(0, 0, 0, 0.38);
+        -moz-box-shadow: 7px 10px 39px -18px rgba(0, 0, 0, 0.38);
+        box-shadow: 7px 10px 39px -18px rgba(0, 0, 0, 0.38);
+
+        [class^="icon-"],
+        [class*="icon-"] {
+
+          &::before {
+            color: $secondary-color;
+          }
+        }
+      }
+
+      @media (max-width: 1024px) {
+        width: 40%;
+      }
+
+      @media (max-width: 700px) {
+        width: 100%;
+        padding: 20px 0;
+        margin: 10px 0;
+      }
+
+      .card__title {
+        @include black-text;
+        text-transform: uppercase;
+      }
+
+      .card__icon {
+        margin: 20px 0;
+        display: block;
+        color: $primary-color;
+      }
+
+      [class^="icon-"],
+      [class*="icon-"] {
+        margin: 35px;
+        display: inline-block;
+
+        &::before {
+          font-size: 56px;
+          transition: .2s ease-in;
+        }
+      }
+    }
+  }
+
+  .search {
+    position: relative;
+
+    input {
+      padding: 5px 40px 5px 5px;
+      border: 1px solid $light-border;
+      width: 300px;
+      margin: 20px 0;
+      height: 30px;
+
+      &:focus {
+        outline: $secondary-color solid 1px;
+      }
+
+      @media (max-width: 350px) {
+        width: 85%;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      top: 22px;
+      left: 308px;
+      padding: 7px;
+
+      @media (max-width: 350px) {
+        left: auto;
+        right: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.about-us {
+
+  .row {
+    margin: 40px 0;
+
+    &:nth-child(odd) {
+
+      .column-half__inner-wrapper {
+        padding-left: 50px;
+        padding-right: 0;
+
+        @media (max-width: 840px) {
+          padding-left: 0;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+
+      .column-half__inner-wrapper {
+        padding-right: 50px;
+        padding-left: 0;
+      }
+    }
+
+    .column-half {
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,232 @@
+.main-header {
+  height: 165px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 900px) {
+    height: 135px;
+  }
+  @media (max-width: 740px) {
+    height: 56px;
+  }
+}
+
+.top-header {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid $light-border;
+
+  .center {
+    @media (max-width: 740px) {
+      height: auto;
+      padding: 10px 0;
+    }
+  }
+
+  .top-header-col__left {
+    padding: 0 20px;
+    width: 10%;
+    cursor: pointer;
+
+    .logo {
+      display: inline-block;
+      width: 110px;
+
+      @media (max-width: 900px) {
+        width: 80px;
+      }
+
+      @media (max-width: 740px) {
+        width: 58px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .hamburger {
+      position: absolute;
+      @include center-vertically;
+    }
+
+    @media (max-width: 900px) {
+      height: 36px;
+    }
+  }
+
+  .top-header-col__right {
+    width: 80%;
+
+    .inline-contact-info {
+
+      .contact-information__name {
+
+        @media (max-width: 900px) {
+          display: none;
+        }
+      }
+
+      [class^="icon-"],
+      [class*="icon-"] {
+
+        &::before {
+          display: inline-block;
+        }
+      }
+
+      @media (max-width: 900px) {
+        float: left;
+      }
+
+      @media (max-width: 740px) {
+        display: none;
+      }
+    }
+
+    .left,
+    .right {
+      @media (max-width: 740px) {
+        float: none;
+      }
+    }
+
+    @media (max-width: 740px) {
+      z-index: 11;
+      display: none;
+    }
+  }
+
+  @media (max-width: 740px) {
+    height: 56px;
+  }
+}
+
+//bottom main-menu
+.main-menu {
+  display: block;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  background-color: $primary-color;
+
+  &.mobile-menu {
+    width: 70%;
+    right: 0;
+    left: auto;
+    display: block;
+    position: absolute;
+
+    .main-navigation {
+
+      ul {
+        margin-top: 70px;
+
+        li {
+          border-bottom: 1px solid $light-grey;
+
+          &:first-child {
+            border-top: 1px solid $light-grey;
+          }
+        }
+      }
+    }
+
+    a {
+      width: -moz-available;          /* WebKit-based browsers will ignore this. */
+      width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+      width: fill-available;
+    }
+  }
+
+  .center {
+    padding: 0;
+  }
+
+  .main-navigation {
+
+    ul {
+      text-align: left;
+      position: relative;
+      margin: 0;
+      height: 100%;
+
+
+      li {
+        position: relative;
+        display: inline-block;
+        padding: 0;
+
+        a {
+          padding: 24px;
+          display: inline-block;
+          text-decoration: none;
+          color: $font-color-light;
+
+          &.active {
+            color: $secondary-color;
+          }
+
+          &:before {
+            right: 0;
+            display: block;
+            margin: 0 auto;
+            position: absolute;
+            top: 25px;
+            font-size: 4em;
+            color: transparent;
+            text-shadow: transparent 0 0;
+            line-height: 20px;
+            content: ".";
+            pointer-events: none;
+            transition: text-shadow 0.3s ease 0s, color 0.3s ease 0s;
+            left: 60%;
+            transform: translateX(-50%);
+          }
+
+          &:hover {
+            color: $secondary-color;
+
+            &:before {
+              color: $font-color-light;
+              text-shadow: 9px 0 $font-color-light;
+            }
+          }
+        }
+
+        @media (max-width: 740px) {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    @media (max-width: 740px) {
+      float: left;
+      width: 100%;
+      border-bottom: 1px solid $light-border;
+      border-bottom: none;
+      position: relative;
+    }
+  }
+
+  @media (max-width: 740px) {
+    display: none;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+  }
+}
+
+.hamburger {
+  display: none;
+  padding-right: 20px;
+
+  @media (max-width: 740px) {
+    display: inline-block;
+    right: 0;
+    cursor: pointer;
+  }
+}
+

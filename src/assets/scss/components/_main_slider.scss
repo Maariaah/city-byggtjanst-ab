@@ -1,0 +1,159 @@
+.slick-arrow {
+  border: none;
+  z-index: 8;
+  position: absolute;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  background-repeat: no-repeat;
+  color: transparent;
+  background-color: transparent;
+
+  @include center-vertically;
+}
+
+.slick-prev {
+  left: 20px;
+  background-image: url("../icons/chevron-left.svg");
+}
+
+.slick-next {
+  right: 20px;
+  background-image: url("../icons/chevron-right.svg");
+}
+
+.slick-slider {
+  position: relative;
+  overflow: hidden;
+
+  .slider-wrapper {
+    position: relative;
+    width: inherit;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.slick-slide {
+  float: left;
+
+  &:not(first-of-type) {
+    display: none;
+  }
+
+  //prevent to load all images before the slider is initialized
+  .slick-initialized & {
+
+    &:not(first-of-type) {
+      display: block;
+    }
+  }
+
+  .hero-image-wrapper {
+    max-height: calc(100vh - 174px);
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .slider-content-wrapper {
+    top: 60%;
+    z-index: 2;
+    max-width: 1120px;
+    position: absolute;
+    margin: 0 auto;
+    left: 100px;
+    right: 0;
+    @include center-vertically;
+
+    @media (max-width: 450px) {
+      margin-left: 50px;
+      left: 0;
+    }
+  }
+
+  .slider-content-wrapper {
+
+    h2,
+    .hero-button {
+      color: $light-border;
+      z-index: 9;
+      display: block;
+    }
+
+    h2 {
+      top: -40px;
+      width: 50%;
+      font-size: 36px;
+      line-height: 42px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        height: 1px;
+        width: 70%;
+      }
+
+      @media (max-width: 740px) {
+        width: 70%;
+      }
+
+      @media (max-width: 450px) {
+        font-size: 21px;
+        line-height: 28px;
+      }
+    }
+
+    .button {
+      @media (max-width: 450px) {
+        padding: 10px 20px;
+      }
+    }
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  text-align: center;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+
+  li {
+    width: 40px;
+    height: 2px;
+    border-radius: 50px;
+    background-color: $light-border;
+    padding: 0;
+    display: inline-block;
+    margin: 0 6px;
+
+    &.slick-active {
+      background-color: $secondary-color;
+    }
+
+    button {
+      display: none;
+    }
+  }
+
+  @media (max-width: 740px) {
+  bottom: 5px;
+  }
+}

@@ -1,0 +1,21 @@
+@mixin black-text {
+    font-weight: bold;
+    color: $font-color-dark;
+    line-height: 28px;
+  }
+
+@mixin center-vertically {
+  top:50%;
+  transform: translateY(-50%);
+}
+
+@mixin center-horizontally {
+  margin: 0 auto;
+  display: table;
+}
+
+@mixin center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
